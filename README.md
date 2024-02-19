@@ -1,3 +1,8 @@
+
+### About The Project
+Training project testing MyDemoApp mobile app from Saucelabs, using core testing tools such as Java, the Carina framework, and Appium. The testing process is integrated with Jenkins and using TestRail to provide a comprehensive testing experience.
+
+
 ### Getting started
 * Install and configure JDK 11
 * Install and configure [Apache Maven 3.6.0+](http://maven.apache.org/)
