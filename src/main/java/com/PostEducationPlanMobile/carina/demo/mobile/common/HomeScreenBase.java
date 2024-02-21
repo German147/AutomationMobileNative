@@ -10,4 +10,8 @@ public abstract class HomeScreenBase extends AbstractPage {
 
     public abstract boolean isPageOpened();
 
+    public abstract ProductScreenBase clickOnBackPack();
+
+    public abstract MenuScreenBase clickOnMenuBurgerBtn();
+
 }
