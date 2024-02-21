@@ -6,7 +6,9 @@ import com.PostEducationPlanMobile.carina.demo.mobile.common.ProductScreenBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 @DeviceType(pageType = DeviceType.Type.ANDROID_PHONE,parentClass = HomeScreenBase.class)
 public class HomeScreen extends HomeScreenBase {
@@ -18,6 +20,7 @@ public class HomeScreen extends HomeScreenBase {
     private ExtendedWebElement backpack;
 
     @FindBy(id = "com.saucelabs.mydemoapp.android:id/menuIV")
+
     private ExtendedWebElement menuBtn;
 
     public HomeScreen(WebDriver driver) {
