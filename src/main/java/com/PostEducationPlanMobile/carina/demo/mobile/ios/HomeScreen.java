@@ -3,9 +3,9 @@ package com.PostEducationPlanMobile.carina.demo.mobile.ios;
 import com.PostEducationPlanMobile.carina.demo.mobile.common.HomeScreenBase;
 import com.PostEducationPlanMobile.carina.demo.mobile.common.MenuScreenBase;
 import com.PostEducationPlanMobile.carina.demo.mobile.common.ProductScreenBase;
+import com.PostEducationPlanMobile.carina.demo.mobile.ios.component.Header;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
-import com.zebrunner.carina.webdriver.decorator.annotations.Predicate;
 import com.zebrunner.carina.webdriver.locator.ExtendedFindBy;
 import org.openqa.selenium.WebDriver;
 
@@ -21,6 +21,9 @@ public class HomeScreen extends HomeScreenBase {
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeButton[`name == \"More-tab-item\"`]")
     private ExtendedWebElement menuBtn;
 
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == \"Catalog-screen\"`]/XCUIElementTypeOther[1]")
+    private Header header;
+
     public HomeScreen(WebDriver driver) {
         super(driver);
     }
@@ -28,6 +31,11 @@ public class HomeScreen extends HomeScreenBase {
     @Override
     public boolean isPageOpened() {
         return logoIcon.isElementPresent();
+    }
+
+    @Override
+    public Header getHeader() {
+        return header;
     }
 
     @Override
