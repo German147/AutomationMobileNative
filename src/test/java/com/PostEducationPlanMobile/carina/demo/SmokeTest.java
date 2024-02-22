@@ -10,6 +10,6 @@ public class SmokeTest implements IAbstractTest {
     @Test
     public void smokeTest() {
         HomeScreenBase catalogueScreen = initPage(getDriver(), HomeScreenBase.class);
-        Assert.assertTrue(catalogueScreen.isPageOpened(), "The cataloge app screen was not displayed");
+        Assert.assertTrue(catalogueScreen.isPageOpened(), "The catalogue app screen was not displayed");
     }
 }

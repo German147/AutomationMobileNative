@@ -1,4 +1,4 @@
-package com.PostEducationPlanMobile.carina.demo.mobile.ios;
+package com.PostEducationPlanMobile.carina.demo.mobile.android;
 
 import com.PostEducationPlanMobile.carina.demo.mobile.common.HomeScreenBase;
 import com.PostEducationPlanMobile.carina.demo.mobile.common.MenuScreenBase;
@@ -6,23 +6,20 @@ import com.PostEducationPlanMobile.carina.demo.mobile.common.ProductScreenBase;
 import com.PostEducationPlanMobile.carina.demo.mobile.ios.component.Header;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
-import com.zebrunner.carina.webdriver.locator.ExtendedFindBy;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.FindBy;
 
-@DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = HomeScreenBase.class)
+@DeviceType(pageType = DeviceType.Type.ANDROID_PHONE,parentClass = HomeScreenBase.class)
 public class HomeScreen extends HomeScreenBase {
 
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeImage[`name == \"AppTitle Icons\"`]")
-    private ExtendedWebElement logoIcon;
+    @FindBy(className = "android.widget.ImageView")
+    private ExtendedWebElement logo;
 
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == \"ProductItem\"`][1]/XCUIElementTypeImage")
+    @FindBy(xpath = "//android.widget.ImageView[@content-desc=\"Sauce Lab Back Packs\"]")
     private ExtendedWebElement backpack;
 
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeButton[`name == \"More-tab-item\"`]")
+    @FindBy(id = "com.saucelabs.mydemoapp.android:id/menuIV")
     private ExtendedWebElement menuBtn;
-
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == \"Catalog-screen\"`]/XCUIElementTypeOther[1]")
-    private Header header;
 
     public HomeScreen(WebDriver driver) {
         super(driver);
@@ -30,23 +27,23 @@ public class HomeScreen extends HomeScreenBase {
 
     @Override
     public boolean isPageOpened() {
-        return logoIcon.isElementPresent();
+        return logo.isElementPresent();
     }
 
     @Override
     public Header getHeader() {
-        return header;
+        return null;
     }
 
     @Override
     public ProductScreenBase clickOnBackPack() {
        backpack.click();
-        return initPage(getDriver(),ProductScreenBase.class);
+        return initPage(getDriver(), ProductScreenBase.class);
     }
 
     @Override
     public MenuScreenBase clickOnMenuBurgerBtn() {
-        menuBtn.click();
+       menuBtn.click();
         return initPage(getDriver(), MenuScreenBase.class);
     }
 }
