@@ -3,6 +3,7 @@ package com.PostEducationPlanMobile.carina.demo.mobile.ios;
 import com.PostEducationPlanMobile.carina.demo.mobile.common.HomeScreenBase;
 import com.PostEducationPlanMobile.carina.demo.mobile.common.MenuScreenBase;
 import com.PostEducationPlanMobile.carina.demo.mobile.common.ProductScreenBase;
+import com.PostEducationPlanMobile.carina.demo.mobile.ios.component.Footer;
 import com.PostEducationPlanMobile.carina.demo.mobile.ios.component.Header;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
@@ -24,6 +25,9 @@ public class HomeScreen extends HomeScreenBase {
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == \"Catalog-screen\"`]/XCUIElementTypeOther[1]")
     private Header header;
 
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == \"ProductDetails-screen\"`]/XCUIElementTypeOther[4]/XCUIElementTypeOther")
+    private Footer footer;
+
     public HomeScreen(WebDriver driver) {
         super(driver);
     }
@@ -36,6 +40,11 @@ public class HomeScreen extends HomeScreenBase {
     @Override
     public Header getHeader() {
         return header;
+    }
+
+    @Override
+    public Footer getFooter() {
+        return footer;
     }
 
     @Override

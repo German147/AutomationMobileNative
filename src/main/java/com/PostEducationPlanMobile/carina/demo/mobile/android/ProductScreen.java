@@ -9,4 +9,19 @@ public class ProductScreen extends ProductScreenBase {
     public ProductScreen(WebDriver driver) {
         super(driver);
     }
+
+    @Override
+    public void addToChartBtn() {
+
+    }
+
+    @Override
+    public void minusBtnClick() {
+
+    }
+
+    @Override
+    public void plusBtnClick() {
+
+    }
 }

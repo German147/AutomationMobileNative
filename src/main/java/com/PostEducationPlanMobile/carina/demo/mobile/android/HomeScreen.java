@@ -3,6 +3,7 @@ package com.PostEducationPlanMobile.carina.demo.mobile.android;
 import com.PostEducationPlanMobile.carina.demo.mobile.common.HomeScreenBase;
 import com.PostEducationPlanMobile.carina.demo.mobile.common.MenuScreenBase;
 import com.PostEducationPlanMobile.carina.demo.mobile.common.ProductScreenBase;
+import com.PostEducationPlanMobile.carina.demo.mobile.ios.component.Footer;
 import com.PostEducationPlanMobile.carina.demo.mobile.ios.component.Header;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
@@ -35,6 +36,11 @@ public class HomeScreen extends HomeScreenBase {
 
     @Override
     public Header getHeader() {
+        return null;
+    }
+
+    @Override
+    public Footer getFooter() {
         return null;
     }
 

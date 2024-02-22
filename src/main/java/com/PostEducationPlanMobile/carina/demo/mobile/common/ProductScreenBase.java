@@ -8,4 +8,10 @@ public abstract class ProductScreenBase extends AbstractPage {
         super(driver);
     }
 
+    public abstract void addToChartBtn();
+    public abstract void minusBtnClick();
+    public abstract void plusBtnClick();
+
+
+
 }
