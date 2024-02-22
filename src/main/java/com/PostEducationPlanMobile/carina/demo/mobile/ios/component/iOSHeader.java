@@ -8,11 +8,11 @@ import com.zebrunner.carina.webdriver.locator.ExtendedFindBy;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 
-public class Header extends AbstractUIObject {
+public class iOSHeader extends AbstractUIObject {
 
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeButton[`label == \"Button\"`]")
     private ExtendedWebElement sortingBtn;
-    public Header(WebDriver driver, SearchContext searchContext) {
+    public iOSHeader(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
     }
 

@@ -8,6 +8,5 @@ public abstract class CartScreenBase extends AbstractPage {
         super(driver);
     }
 
-
     public abstract boolean isProductPresent();
 }

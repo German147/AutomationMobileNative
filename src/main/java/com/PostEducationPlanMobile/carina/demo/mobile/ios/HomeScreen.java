@@ -1,14 +1,16 @@
 package com.PostEducationPlanMobile.carina.demo.mobile.ios;
 
+import com.PostEducationPlanMobile.carina.demo.mobile.android.component.AndroidHeader;
 import com.PostEducationPlanMobile.carina.demo.mobile.common.HomeScreenBase;
 import com.PostEducationPlanMobile.carina.demo.mobile.common.MenuScreenBase;
 import com.PostEducationPlanMobile.carina.demo.mobile.common.ProductScreenBase;
 import com.PostEducationPlanMobile.carina.demo.mobile.ios.component.Footer;
-import com.PostEducationPlanMobile.carina.demo.mobile.ios.component.Header;
+import com.PostEducationPlanMobile.carina.demo.mobile.ios.component.iOSHeader;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.locator.ExtendedFindBy;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.FindBy;
 
 @DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = HomeScreenBase.class)
 public class HomeScreen extends HomeScreenBase {
@@ -23,7 +25,10 @@ public class HomeScreen extends HomeScreenBase {
     private ExtendedWebElement menuBtn;
 
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == \"Catalog-screen\"`]/XCUIElementTypeOther[1]")
-    private Header header;
+    private iOSHeader header;
+
+    @FindBy(id = "com.saucelabs.mydemoapp.android:id/header")
+    private AndroidHeader androidHeader;
 
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == \"ProductDetails-screen\"`]/XCUIElementTypeOther[4]/XCUIElementTypeOther")
     private Footer footer;
@@ -38,8 +43,13 @@ public class HomeScreen extends HomeScreenBase {
     }
 
     @Override
-    public Header getHeader() {
+    public iOSHeader getIOSHeader() {
         return header;
+    }
+
+    @Override
+    public AndroidHeader getAndroidHeader() {
+        return androidHeader;
     }
 
     @Override
