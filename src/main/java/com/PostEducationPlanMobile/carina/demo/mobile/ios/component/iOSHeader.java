@@ -1,7 +1,11 @@
 package com.PostEducationPlanMobile.carina.demo.mobile.ios.component;
 
-import com.PostEducationPlanMobile.carina.demo.mobile.common.SortingScreenBase;
-import com.PostEducationPlanMobile.carina.demo.mobile.ios.SortingScreen;
+import com.PostEducationPlanMobile.carina.demo.mobile.common.CartPageBase;
+import com.PostEducationPlanMobile.carina.demo.mobile.common.HomePageBase;
+import com.PostEducationPlanMobile.carina.demo.mobile.common.SortingPageBase;
+import com.PostEducationPlanMobile.carina.demo.mobile.ios.CartPage;
+import com.PostEducationPlanMobile.carina.demo.mobile.ios.IOSHomePage;
+import com.PostEducationPlanMobile.carina.demo.mobile.ios.SortingPage;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
 import com.zebrunner.carina.webdriver.locator.ExtendedFindBy;
@@ -12,13 +16,33 @@ public class iOSHeader extends AbstractUIObject {
 
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeButton[`label == \"Button\"`]")
     private ExtendedWebElement sortingBtn;
+
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == \"test-Cart\"`]")
+    private ExtendedWebElement cartBtn;
+
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == \"test-Menu\"`]")
+    private ExtendedWebElement menuBurgerBtn;
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`label == \"ALL ITEMS\"`]")
+    private ExtendedWebElement catalogueBtn;
     public iOSHeader(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
     }
 
-    public SortingScreenBase clickOnSortingBtn(){
+    public SortingPageBase clickOnSortingBtn(){
         sortingBtn.click();
-        return new SortingScreen(getDriver());
+        return new SortingPage(getDriver());
+    }
+    public CartPageBase clickOnCartBtn(){
+        cartBtn.click();
+        return new CartPage(getDriver());
+    }
+    public HomePageBase clickOnMenu(){
+        menuBurgerBtn.click();
+        return new IOSHomePage(getDriver());
+    }
+    public HomePageBase clickOnCatalogue(){
+        catalogueBtn.click();
+        return new IOSHomePage(getDriver());
     }
 
 }

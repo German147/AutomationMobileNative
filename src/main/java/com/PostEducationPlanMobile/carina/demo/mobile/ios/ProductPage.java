@@ -1,13 +1,13 @@
 package com.PostEducationPlanMobile.carina.demo.mobile.ios;
 
-import com.PostEducationPlanMobile.carina.demo.mobile.common.ProductScreenBase;
+import com.PostEducationPlanMobile.carina.demo.mobile.common.ProductPageBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.locator.ExtendedFindBy;
 import org.openqa.selenium.WebDriver;
 
-@DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = ProductScreenBase.class)
-public class ProductScreen extends ProductScreenBase {
+@DeviceType(pageType = DeviceType.Type.IOS_PHONE, parentClass = ProductPageBase.class)
+public class ProductPage extends ProductPageBase {
 
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeButton[`label == \"Add To Cart\"`]")
     private ExtendedWebElement addBtn;
@@ -19,12 +19,12 @@ public class ProductScreen extends ProductScreenBase {
     private ExtendedWebElement plusBtn;
 
 
-    public ProductScreen(WebDriver driver) {
+    public ProductPage(WebDriver driver) {
         super(driver);
     }
 
     @Override
-    public void addToChartBtn() {
+    public void addToCartBtn() {
       addBtn.click();
     }
 

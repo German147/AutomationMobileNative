@@ -1,22 +1,22 @@
 package com.PostEducationPlanMobile.carina.demo.mobile.android;
 
-import com.PostEducationPlanMobile.carina.demo.mobile.common.ProductScreenBase;
+import com.PostEducationPlanMobile.carina.demo.mobile.common.ProductPageBase;
 import com.zebrunner.carina.utils.factory.DeviceType;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
-@DeviceType(pageType = DeviceType.Type.ANDROID_PHONE,parentClass = ProductScreenBase.class)
-public class ProductScreen extends ProductScreenBase {
+@DeviceType(pageType = DeviceType.Type.ANDROID_PHONE,parentClass = ProductPageBase.class)
+public class ProductPage extends ProductPageBase {
 
     @FindBy(id = "com.saucelabs.mydemoapp.android:id/cartBt")
     private ExtendedWebElement addToCartBtn;
-    public ProductScreen(WebDriver driver) {
+    public ProductPage(WebDriver driver) {
         super(driver);
     }
 
     @Override
-    public void addToChartBtn() {
+    public void addToCartBtn() {
         addToCartBtn.click();
     }
 
