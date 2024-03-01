@@ -30,4 +30,14 @@ public class CartPage extends CartPageBase {
         goShoppingBtn.click();
         return initPage(getDriver(), HomePageBase.class);
     }
+
+    @Override
+    public HomePageBase clickContinueShopping() {
+        return null;
+    }
+
+    @Override
+    public CartPageBase clickRemoveButton() {
+        return null;
+    }
 }
