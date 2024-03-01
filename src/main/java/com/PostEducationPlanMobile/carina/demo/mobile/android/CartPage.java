@@ -10,8 +10,14 @@ import org.openqa.selenium.support.FindBy;
 @DeviceType(pageType = DeviceType.Type.ANDROID_PHONE, parentClass = CartPageBase.class)
 public class CartPage extends CartPageBase {
 
-    @FindBy(id = "com.saucelabs.mydemoapp.android:id/titleTV")
+    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-Item\"]")
     private ExtendedWebElement product;
+
+    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-CONTINUE SHOPPING\"]")
+    private ExtendedWebElement continueShoppingBtn;
+
+    @FindBy(xpath = "//android.view.ViewGroup[@content-desc=\"test-REMOVE\"]")
+    private ExtendedWebElement removeBtn;
 
     public CartPage(WebDriver driver) {
         super(driver);
@@ -25,5 +31,17 @@ public class CartPage extends CartPageBase {
     @Override
     public HomePageBase clickOnGoShopping() {
         return null;
+    }
+
+    @Override
+    public HomePageBase clickContinueShopping() {
+        continueShoppingBtn.click();
+        return initPage(getDriver(), HomePageBase.class);
+    }
+
+    @Override
+    public CartPageBase clickRemoveButton() {
+     removeBtn.click();
+        return initPage(getDriver(), CartPageBase.class);
     }
 }
