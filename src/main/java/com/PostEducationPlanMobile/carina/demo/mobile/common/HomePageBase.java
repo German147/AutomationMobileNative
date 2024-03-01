@@ -4,6 +4,9 @@ import com.PostEducationPlanMobile.carina.demo.mobile.android.component.AndroidH
 import com.PostEducationPlanMobile.carina.demo.mobile.ios.component.iOSHeader;
 import com.zebrunner.carina.webdriver.gui.AbstractPage;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public abstract class HomePageBase extends AbstractPage {
     public HomePageBase(WebDriver driver) {
@@ -12,15 +15,21 @@ public abstract class HomePageBase extends AbstractPage {
 
     public abstract boolean isPageOpened();
 
-    public abstract iOSHeader getIOSHeader();
+    public abstract HeaderBase getHeader();
 
-    public abstract AndroidHeader getAndroidHeader();
-
-    public abstract ProductPageBase clickOnBackPack();
-
-    public abstract MenuPageBase clickOnMenuBurgerBtn();
+    public abstract ProductPageBase clickOnProduct(int index);
 
     public abstract LoginPageBase clickLogin();
+
     public abstract String isProductTitlePresent();
 
+    public abstract List<WebElement> getProductList();
+
+    public abstract HomePageBase clickOnToggleBtn();
+
+    public abstract List<WebElement> getAddBtnList();
+
+    public abstract HomePageBase clickOnAddBtn(int index);
+
+    public abstract int getCartValue(String value);
 }

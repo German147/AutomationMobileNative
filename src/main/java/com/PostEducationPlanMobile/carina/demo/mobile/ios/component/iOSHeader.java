@@ -1,48 +1,45 @@
 package com.PostEducationPlanMobile.carina.demo.mobile.ios.component;
 
-import com.PostEducationPlanMobile.carina.demo.mobile.common.CartPageBase;
-import com.PostEducationPlanMobile.carina.demo.mobile.common.HomePageBase;
-import com.PostEducationPlanMobile.carina.demo.mobile.common.SortingPageBase;
+import com.PostEducationPlanMobile.carina.demo.mobile.common.*;
 import com.PostEducationPlanMobile.carina.demo.mobile.ios.CartPage;
 import com.PostEducationPlanMobile.carina.demo.mobile.ios.IOSHomePage;
+import com.PostEducationPlanMobile.carina.demo.mobile.ios.MenuPage;
 import com.PostEducationPlanMobile.carina.demo.mobile.ios.SortingPage;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
+import com.zebrunner.carina.webdriver.decorator.annotations.Predicate;
 import com.zebrunner.carina.webdriver.gui.AbstractUIObject;
 import com.zebrunner.carina.webdriver.locator.ExtendedFindBy;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-public class iOSHeader extends AbstractUIObject {
+import java.util.List;
 
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeButton[`label == \"Button\"`]")
-    private ExtendedWebElement sortingBtn;
+public class iOSHeader extends HeaderBase {
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == \"test-Cart\"`]/XCUIElementTypeOther")
+    private ExtendedWebElement cartItems;
+    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`label == \"1\"`][2]/XCUIElementTypeOther[2]")
+    private ExtendedWebElement menuBtn;
 
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == \"test-Cart\"`]")
-    private ExtendedWebElement cartBtn;
-
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`name == \"test-Menu\"`]")
-    private ExtendedWebElement menuBurgerBtn;
-    @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeOther[`label == \"ALL ITEMS\"`]")
-    private ExtendedWebElement catalogueBtn;
     public iOSHeader(WebDriver driver, SearchContext searchContext) {
         super(driver, searchContext);
     }
 
-    public SortingPageBase clickOnSortingBtn(){
-        sortingBtn.click();
-        return new SortingPage(getDriver());
+    @Override
+    public String getCartItems() {
+       return cartItems.getAttribute("name");
     }
-    public CartPageBase clickOnCartBtn(){
-        cartBtn.click();
-        return new CartPage(getDriver());
+
+    @Override
+    public CartPageBase clickCartBtn() {
+        return null;
     }
-    public HomePageBase clickOnMenu(){
-        menuBurgerBtn.click();
-        return new IOSHomePage(getDriver());
-    }
-    public HomePageBase clickOnCatalogue(){
-        catalogueBtn.click();
-        return new IOSHomePage(getDriver());
+
+    @Override
+    public MenuPageBase clickOnMenuBurgerBtn() {
+        menuBtn.click();
+        return new MenuPage(getDriver());
     }
 
 }

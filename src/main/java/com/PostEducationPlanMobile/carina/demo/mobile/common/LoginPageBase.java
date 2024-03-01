@@ -9,7 +9,7 @@ public abstract class LoginPageBase extends AbstractPage {
         super(driver);
     }
 
-    public abstract HomePageBase ClickLoginButton();
-    public abstract void typeIntoInput();
+    public abstract HomePageBase clickLoginButton();
+    public abstract void login();
 
 }

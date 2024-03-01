@@ -23,14 +23,14 @@ public class LoginPage extends LoginPageBase {
     }
 
     @Override
-    public HomePageBase ClickLoginButton() {
-       loginBtn.click();
+    public HomePageBase clickLoginButton() {
         return initPage(getDriver(), HomePageBase.class);
     }
     @Override
-    public void typeIntoInput() {
+    public void login() {
     username.type(R.TESTDATA.get("user"));
     password.type(R.TESTDATA.get("password"));
+        loginBtn.click();
     }
 
 }

@@ -6,8 +6,7 @@ public interface ILogIn extends ICustomTypePageFactory {
 
     default HomePageBase loginApp() {
         LoginPageBase loginPageBase = initPage(getDriver(), LoginPageBase.class);
-        loginPageBase.typeIntoInput();
-        loginPageBase.ClickLoginButton();
+        loginPageBase.login();
         return initPage(getDriver(), HomePageBase.class);
     }
 
