@@ -25,6 +25,17 @@ public class TestSwaglabsApp implements IAbstractTest, ILogIn {
         Assert.assertTrue(homePage.isPageOpened(), "The page was not opened");
     }
 
+    @Test(description = "[TC003]-testAddProductToCart")
+    @MethodOwner(owner = "barrreraGerman")
+    @TestLabel(name = "feature", value = {"mobile", "functionality"})
+    public void testInvalidLogin() {
+        String invalidUsername = "Test user";
+        String invalidPassword = RandomStringUtils.randomAlphabetic(10);
+        LoginPageBase loginPageBase = initPage(getDriver(), LoginPageBase.class);
+        loginPageBase.invalidLogin(invalidUsername, invalidPassword);
+
+        Assert.assertTrue(loginPageBase.isErrorMessagePresent(), "The page was opened");
+    }
 
     @Test(description = "[TC004]-testAddProductToCart")
     @MethodOwner(owner = "barrreraGerman")
