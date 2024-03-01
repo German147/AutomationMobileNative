@@ -29,10 +29,22 @@ public class LoginPage extends LoginPageBase {
         return initPage(getDriver(), HomePageBase.class);
     }
     @Override
-    public void login() {
+    public HomePageBase login() {
     username.type(R.TESTDATA.get("user"));
     password.type(R.TESTDATA.get("password"));
     clickLoginButton();
+    return initPage(getDriver(), HomePageBase.class);
     }
+
+    @Override
+    public LoginPageBase invalidLogin(String username, String password) {
+        return null;
+    }
+
+    @Override
+    public boolean isErrorMessagePresent() {
+        return false;
+    }
+
 
 }

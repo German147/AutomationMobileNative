@@ -10,6 +10,9 @@ public abstract class LoginPageBase extends AbstractPage {
     }
 
     public abstract HomePageBase clickLoginButton();
-    public abstract void login();
+    public abstract HomePageBase login();
 
+    public abstract LoginPageBase invalidLogin(String username, String password);
+
+    public abstract boolean isErrorMessagePresent();
 }
