@@ -80,29 +80,4 @@ public class TestSwaglabsApp implements IAbstractTest, ILogIn {
 
     }
 
-    @Test(description = "[TC004]-testAddProductToCart")
-    @MethodOwner(owner = "barrreraGerman")
-    @TestLabel(name = "feature", value = {"mobile", "functionality"})
-    public void testRemoveProductFromCartV2() {
-        LoginPageBase loginPageBase = initPage(getDriver(), LoginPageBase.class);
-        HomePageBase homePage = loginPageBase.login();
-
-        Assert.assertTrue(homePage.isPageOpened(), "The page was not opened");
-        HeaderBase header = homePage.getHeader();
-        Assert.assertTrue(header.isUIObjectPresent(), "Header menu was not found");
-
-        CartPageBase cart = header.clickCartBtn();
-        //here we check the cart is empty
-        Assert.assertFalse(cart.isProductPresent(), "The cart is not empty");
-        cart.clickContinueShopping();
-        homePage.clickOnAddBtn(0);
-        header.clickCartBtn();
-        //Now we check is effectively a product was added to the cart
-        Assert.assertTrue(cart.isProductPresent(), "it was not added a product to cart");
-        cart.clickRemoveButton();
-
-        //here we check the cart is empty again
-        Assert.assertFalse(cart.isProductPresent(), "The cart is not empty");
-
-    }
 }
