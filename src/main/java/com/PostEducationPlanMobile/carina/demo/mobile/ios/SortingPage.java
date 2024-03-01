@@ -1,12 +1,12 @@
 package com.PostEducationPlanMobile.carina.demo.mobile.ios;
 
-import com.PostEducationPlanMobile.carina.demo.mobile.common.HomeScreenBase;
-import com.PostEducationPlanMobile.carina.demo.mobile.common.SortingScreenBase;
+import com.PostEducationPlanMobile.carina.demo.mobile.common.HomePageBase;
+import com.PostEducationPlanMobile.carina.demo.mobile.common.SortingPageBase;
 import com.zebrunner.carina.webdriver.decorator.ExtendedWebElement;
 import com.zebrunner.carina.webdriver.locator.ExtendedFindBy;
 import org.openqa.selenium.WebDriver;
 
-public class SortingScreen extends SortingScreenBase {
+public class SortingPage extends SortingPageBase {
 
     @ExtendedFindBy(iosClassChain = "**/XCUIElementTypeButton[`label == \"Name - Ascending\"`]")
     private ExtendedWebElement nameAscendingBtn;
@@ -21,31 +21,31 @@ public class SortingScreen extends SortingScreenBase {
     private ExtendedWebElement priceDescendingBtn;
 
 
-    public SortingScreen(WebDriver driver) {
+    public SortingPage(WebDriver driver) {
         super(driver);
     }
 
     @Override
-    public HomeScreenBase clickNameAscending() {
+    public HomePageBase clickNameAscending() {
        nameAscendingBtn.click();
-        return initPage(getDriver(), HomeScreenBase.class);
+        return initPage(getDriver(), HomePageBase.class);
     }
 
     @Override
-    public HomeScreenBase clickNameDescending() {
+    public HomePageBase clickNameDescending() {
        nameDescendingBtn.click();
-        return initPage(getDriver(), HomeScreenBase.class);
+        return initPage(getDriver(), HomePageBase.class);
     }
 
     @Override
-    public HomeScreenBase clickPriceAscending() {
+    public HomePageBase clickPriceAscending() {
        priceAscendingBtn.click();
-        return initPage(getDriver(), HomeScreenBase.class);
+        return initPage(getDriver(), HomePageBase.class);
     }
 
     @Override
-    public HomeScreenBase clickPriceDescending() {
+    public HomePageBase clickPriceDescending() {
         priceDescendingBtn.click();
-        return initPage(getDriver(), HomeScreenBase.class);
+        return initPage(getDriver(), HomePageBase.class);
     }
 }
