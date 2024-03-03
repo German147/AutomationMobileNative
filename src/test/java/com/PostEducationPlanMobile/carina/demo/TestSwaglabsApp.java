@@ -54,7 +54,7 @@ public class TestSwaglabsApp implements IAbstractTest, ILogIn {
         Assert.assertTrue(initialItemCount < updatedItemAmount, "The product was NOT added to cart");
     }
 
-    @Test(description = "[TC004]-testAddProductToCart")
+    @Test(description = "[TC005]-testAddProductToCart")
     @MethodOwner(owner = "barrreraGerman")
     @TestLabel(name = "feature", value = {"mobile", "functionality"})
     public void testRemoveProductFromCart() {
@@ -77,6 +77,7 @@ public class TestSwaglabsApp implements IAbstractTest, ILogIn {
 
         //here we check the cart is empty again
         Assert.assertFalse(cart.isProductPresent(), "The cart is not empty");
+
 
     }
 
